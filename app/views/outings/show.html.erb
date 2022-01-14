@@ -1,0 +1,11 @@
+<h1><%= @outing.name %> Page</h1>
+
+<h2>Location: <%= @outing.location %></h2>
+<h2>Date: <%= @outing.date_formatter %></h2>
+<p>Count of Contestants: <%= @outing.contestant_count %></p>
+<p>
+Contestants: 
+<% @outing.contestants.each.with_index do |c, index| %>
+  <%= index == @outing.contestant_count - 1 ? c.name : "#{c.name}, " %>
+<% end %>
+</p>
