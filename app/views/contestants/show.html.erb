@@ -1,0 +1,9 @@
+<h1><%= @cont.name %> Page</h1>
+<h2>Season <%= @cont.bachelorette.season_number %> - <%= @cont.bachelorette.desc %>
+
+<h2>Outings:</h2>
+<ul>
+  <% @cont.outings.each do |out| %>
+    <li id="outing-<%= out.id %>"><%= link_to out.name, outing_path(out) %></li>
+  <% end %>
+</ul>
