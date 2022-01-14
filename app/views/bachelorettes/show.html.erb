@@ -1,0 +1,4 @@
+<h1><%= @bach.name %> Page</h2>
+<p><%= @bach.season_number %> - <%= @bach.desc %></p>
+<h2><%= link_to 'Contestants', bach_cont_index_path(@bach) %>
+<p>Average Age of Contestants: <%= @bach.contestant_avg_age.round(1) %>
