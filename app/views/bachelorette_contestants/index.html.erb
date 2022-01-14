@@ -1,0 +1,11 @@
+<h1><%= @bach.name %> Contestants</h1>
+<ul>
+  <% @conts.each do |c| %>
+    <li id="cont-<%= c.id %>">Name: <%= link_to c.name, contestant_path(c) %>, Age: <%= c.age %>, Hometown: <%= c.hometown %></li>
+  <% end %>
+</ul>
+<p id="contestant-list">These Contestants are from these hometowns:
+<% @bach.contestants_hometowns.each.with_index do |hometown, index| %>
+  <%= @bach.contestants_hometowns.count == index + 1 ? hometown : "#{hometown}, " %>
+<% end %>
+</p>
